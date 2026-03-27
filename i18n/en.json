@@ -1,0 +1,40 @@
+{
+  "appName": "Todo List",
+  "tabs": {
+    "todo": "Todos",
+    "settings": "Settings"
+  },
+  "todo": {
+    "placeholder": "Add a new task...",
+    "add": "Add",
+    "empty": "No tasks yet, add one!",
+    "emptyFiltered": "No matching tasks",
+    "filter": {
+      "all": "All",
+      "active": "Active",
+      "completed": "Completed"
+    },
+    "count": {
+      "left": "{{count}} item left",
+      "left_plural": "{{count}} items left"
+    },
+    "clearCompleted": "Clear completed",
+    "completed": "Completed",
+    "markComplete": "Mark complete",
+    "markActive": "Mark incomplete",
+    "delete": "Delete"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": {
+      "title": "Language",
+      "description": "Choose app display language",
+      "zh": "中文",
+      "en": "English"
+    },
+    "about": {
+      "title": "About",
+      "version": "Version 1.0.0"
+    }
+  }
+}

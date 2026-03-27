@@ -1,98 +1,171 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
+import { useState, useEffect, useCallback } from 'react';
+import { FlatList, StyleSheet, Pressable } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
+import { TodoItem } from '@/components/todo/todo-item';
+import { TodoInput } from '@/components/todo/todo-input';
+import { TodoFilter } from '@/components/todo/todo-filter';
+import { useLanguage } from '@/contexts/language-context';
+import { useThemeColor } from '@/hooks/use-theme-color';
+import type { Todo, FilterType } from '@/types/todo';
 
-export default function HomeScreen() {
+const TODOS_KEY = '@todos';
+
+export default function TodoScreen() {
+  const [todos, setTodos] = useState<Todo[]>([]);
+  const [filter, setFilter] = useState<FilterType>('all');
+  const { t } = useLanguage();
+  const tintColor = useThemeColor({}, 'tint');
+
+  useEffect(() => {
+    loadTodos();
+  }, []);
+
+  const loadTodos = async () => {
+    try {
+      const saved = await AsyncStorage.getItem(TODOS_KEY);
+      if (saved) {
+        setTodos(JSON.parse(saved));
+      }
+    } catch (e) {
+      console.error('Failed to load todos:', e);
+    }
+  };
+
+  const saveTodos = async (newTodos: Todo[]) => {
+    try {
+      await AsyncStorage.setItem(TODOS_KEY, JSON.stringify(newTodos));
+    } catch (e) {
+      console.error('Failed to save todos:', e);
+    }
+  };
+
+  const addTodo = useCallback((text: string) => {
+    const newTodo: Todo = {
+      id: Date.now().toString(),
+      text,
+      completed: false,
+      createdAt: Date.now(),
+    };
+    const newTodos = [newTodo, ...todos];
+    setTodos(newTodos);
+    saveTodos(newTodos);
+  }, [todos]);
+
+  const toggleTodo = useCallback((id: string) => {
+    const newTodos = todos.map(todo =>
+      todo.id === id ? { ...todo, completed: !todo.completed } : todo
+    );
+    setTodos(newTodos);
+    saveTodos(newTodos);
+  }, [todos]);
+
+  const deleteTodo = useCallback((id: string) => {
+    const newTodos = todos.filter(todo => todo.id !== id);
+    setTodos(newTodos);
+    saveTodos(newTodos);
+  }, [todos]);
+
+  const clearCompleted = useCallback(() => {
+    const newTodos = todos.filter(todo => !todo.completed);
+    setTodos(newTodos);
+    saveTodos(newTodos);
+  }, [todos]);
+
+  const filteredTodos = todos.filter(todo => {
+    if (filter === 'active') return !todo.completed;
+    if (filter === 'completed') return todo.completed;
+    return true;
+  });
+
+  const activeCount = todos.filter(t => !t.completed).length;
+  const completedCount = todos.filter(t => t.completed).length;
+
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
-            />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+    <ThemedView style={styles.container}>
+      <ThemedText type="title" style={styles.header}>
+        {t('appName')}
+      </ThemedText>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
+      <TodoFilter currentFilter={filter} onFilterChange={setFilter} />
+
+      <ThemedView style={styles.stats}>
+        <ThemedText style={styles.statsText}>
+          {t('todo.count.left', { count: activeCount })}
         </ThemedText>
+        {completedCount > 0 && (
+          <Pressable onPress={clearCompleted}>
+            <ThemedText style={[styles.clearText, { color: tintColor }]}>
+              {t('todo.clearCompleted')}
+            </ThemedText>
+          </Pressable>
+        )}
       </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+
+      <FlatList
+        data={filteredTodos}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <TodoItem
+            todo={item}
+            onToggle={toggleTodo}
+            onDelete={deleteTodo}
+          />
+        )}
+        contentContainerStyle={styles.list}
+        ListEmptyComponent={
+          <ThemedView style={styles.empty}>
+            <ThemedText style={styles.emptyText}>
+              {filter === 'all'
+                ? t('todo.empty')
+                : t('todo.emptyFiltered')}
+            </ThemedText>
+          </ThemedView>
+        }
+      />
+
+      <TodoInput onSubmit={addTodo} />
+    </ThemedView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  container: {
+    flex: 1,
+  },
+  header: {
+    paddingHorizontal: 16,
+    paddingTop: 16,
+    paddingBottom: 8,
+  },
+  stats: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    gap: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  statsText: {
+    fontSize: 14,
+    opacity: 0.6,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  clearText: {
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  list: {
+    flexGrow: 1,
+    paddingTop: 8,
+  },
+  empty: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 100,
+  },
+  emptyText: {
+    fontSize: 16,
+    opacity: 0.5,
   },
 });

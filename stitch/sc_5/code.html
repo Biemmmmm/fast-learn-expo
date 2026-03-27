@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html class="light" lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clearer - 设置</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "surface-dim": "#d8dadc",
+              "on-surface": "#191c1e",
+              "secondary": "#006c4a",
+              "on-primary-fixed-variant": "#dfe2eb",
+              "tertiary-fixed": "#515f74",
+              "on-primary-container": "#ffffff",
+              "tertiary": "#2e3c50",
+              "on-primary-fixed": "#ffffff",
+              "on-tertiary-fixed-variant": "#d5e3fd",
+              "on-tertiary-fixed": "#ffffff",
+              "on-secondary-fixed": "#002114",
+              "secondary-fixed": "#68dba9",
+              "surface": "#f7f9fb",
+              "on-secondary-container": "#002114",
+              "background": "#f7f9fb",
+              "outline-variant": "#c6c6c6",
+              "outline": "#777777",
+              "on-error-container": "#410002",
+              "on-background": "#191c1e",
+              "surface-container-highest": "#e0e3e5",
+              "surface-container-low": "#f2f4f6",
+              "primary-fixed": "#5b5e66",
+              "on-secondary": "#ffffff",
+              "inverse-surface": "#2d3133",
+              "surface-variant": "#e0e3e5",
+              "on-error": "#ffffff",
+              "secondary-container": "#76eab6",
+              "on-surface-variant": "#474747",
+              "surface-tint": "#5b5e66",
+              "inverse-on-surface": "#eff1f3",
+              "on-tertiary-container": "#ffffff",
+              "on-primary": "#dfe2eb",
+              "inverse-primary": "#c3c6cf",
+              "on-tertiary": "#d5e3fd",
+              "surface-container": "#eceef0",
+              "primary": "#000000",
+              "tertiary-fixed-dim": "#3a485c",
+              "secondary-fixed-dim": "#49bf8f",
+              "on-secondary-fixed-variant": "#00452e",
+              "primary-fixed-dim": "#43474e",
+              "surface-bright": "#f7f9fb",
+              "primary-container": "#383c42",
+              "tertiary-container": "#67758c",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-high": "#e6e8ea",
+              "error": "#ba1a1a"
+            },
+            fontFamily: {
+              "headline": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-50 dark:bg-slate-900 h-16 flex items-center justify-between px-6 font-sans antialiased text-slate-900 dark:text-slate-100 tracking-tight">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-400">lightbulb</span>
+<h1 class="text-xl font-bold tracking-tighter text-blue-600 dark:text-blue-400">Clearer</h1>
+</div>
+<button class="bg-surface-container-high text-on-surface-variant px-4 py-1.5 rounded-lg text-sm font-medium hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-150">
+            New Session
+        </button>
+</header>
+<main class="pt-24 px-6 max-w-2xl mx-auto">
+<!-- Page Title -->
+<div class="mb-10">
+<h2 class="text-4xl font-extrabold tracking-tight text-primary mb-2">设置</h2>
+<p class="text-on-surface-variant text-sm tracking-wide uppercase">System Preferences &amp; Account Control</p>
+</div>
+<!-- Section: Preferences -->
+<section class="mb-12">
+<h3 class="text-xs font-bold text-on-surface-variant tracking-[0.2em] uppercase mb-4 px-1">偏好设置</h3>
+<div class="space-y-1">
+<!-- Language Toggle -->
+<div class="group flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">language</span>
+</div>
+<div>
+<p class="font-semibold text-on-surface">语言</p>
+<p class="text-xs text-on-surface-variant">System localization</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm font-medium text-secondary bg-secondary-container/30 px-3 py-1 rounded-full">简体中文</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-on-surface transition-colors">chevron_right</span>
+</div>
+</div>
+<div class="group flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">dark_mode</span>
+</div>
+<div>
+<p class="font-semibold text-on-surface">外观</p>
+<p class="text-xs text-on-surface-variant">跟随系统设置</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+</div>
+</section>
+<!-- Section: Account -->
+<section class="mb-12">
+<h3 class="text-xs font-bold text-on-surface-variant tracking-[0.2em] uppercase mb-4 px-1">账户</h3>
+<div class="bg-surface-container-low rounded-2xl overflow-hidden">
+<div class="p-6 border-b border-outline-variant/10 flex items-center gap-5">
+<div class="relative">
+<img alt="Profile" class="w-16 h-16 rounded-full object-cover grayscale brightness-110" data-alt="professional headshot of a man with minimalist styling, clean lighting, and neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy6N8RgGzE4RCkrTN9Ijs04FBkr387_MZUFWoLdmpoxrssJYapY63ShSd3PknW_Z09Zg-4OWCmKHL7NDAQbsnnO82fPm2IK4WVA8vfACZyMHGC02mFreRYPLH34jHCdIfUyVHlI-BKgom3nQEnjjVYqOA4ywb4Edq8kAcv7L7uvXeJDHrPVM3DOfmuYDjRj81Me4xfj31O2HxpDg1Zp0jJyd3tAzNFQ6aDA_nXpKj13dZenDMRAegpl9OoxqCb829QuTEZSpix1uk"/>
+<div class="absolute bottom-0 right-0 w-5 h-5 bg-secondary rounded-full border-4 border-surface-container-low"></div>
+</div>
+<div>
+<h4 class="text-lg font-bold text-on-surface leading-tight">李明</h4>
+<p class="text-sm text-on-surface-variant">liming.analytical@clearer.ai</p>
+<div class="mt-2 flex items-center gap-2">
+<span class="text-[10px] font-bold bg-primary text-on-primary-container px-2 py-0.5 rounded tracking-tighter">PRO PLAN</span>
+</div>
+</div>
+</div>
+<div class="p-2">
+<div class="flex items-center justify-between p-3 hover:bg-surface-container rounded-xl transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">person_edit</span>
+<span class="text-sm font-medium">编辑个人资料</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-surface-container rounded-xl transition-all cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant">security</span>
+<span class="text-sm font-medium">安全与密码</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: About -->
+<section class="mb-12">
+<h3 class="text-xs font-bold text-on-surface-variant tracking-[0.2em] uppercase mb-4 px-1">关于</h3>
+<div class="space-y-1">
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+<span class="text-sm font-medium">版本</span>
+<span class="text-sm text-outline font-mono">v2.4.0-stable</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container transition-all cursor-pointer">
+<span class="text-sm font-medium">服务条款</span>
+<span class="material-symbols-outlined text-outline-variant">open_in_new</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl hover:bg-surface-container transition-all cursor-pointer text-error">
+<span class="text-sm font-bold">退出登录</span>
+<span class="material-symbols-outlined">logout</span>
+</div>
+</div>
+</section>
+<!-- Signature Editorial Element -->
+<div class="mt-20 pt-10 border-t border-outline-variant/10 flex flex-col items-center">
+<div class="w-12 h-0.5 bg-secondary/30 mb-6"></div>
+<p class="text-[10px] text-on-surface-variant tracking-[0.4em] uppercase opacity-50 text-center">
+                Analytical Intelligence for Complex Systems
+            </p>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-xl z-50 border-t border-slate-200/50 dark:border-slate-800/50">
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="text-[11px] font-medium Inter">输入</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 dark:text-slate-400 opacity-70 hover:opacity-100 transition-opacity active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="text-[11px] font-medium Inter">库</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 font-bold bg-slate-200/50 dark:bg-slate-800/50 rounded-xl px-3 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[11px] font-medium Inter">设置</span>
+</a>
+</nav>
+</body></html>
