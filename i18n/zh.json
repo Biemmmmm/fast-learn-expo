@@ -1,40 +1,109 @@
 {
-  "appName": "待办清单",
+  "appName": "Clearer",
   "tabs": {
-    "todo": "待办",
+    "input": "输入",
+    "library": "库",
     "settings": "设置"
   },
-  "todo": {
-    "placeholder": "添加新任务...",
-    "add": "添加",
-    "empty": "暂无任务，添加一个吧！",
-    "emptyFiltered": "没有符合条件的任务",
-    "filter": {
-      "all": "全部",
-      "active": "进行中",
-      "completed": "已完成"
-    },
-    "count": {
-      "left": "剩余 {{count}} 项",
-      "left_plural": "剩余 {{count}} 项"
-    },
-    "clearCompleted": "清除已完成",
-    "completed": "已完成",
-    "markComplete": "标记完成",
-    "markActive": "标记未完成",
-    "delete": "删除"
+  "input": {
+    "title": "我们要定义什么",
+    "titleHighlight": "问题？",
+    "subtitle": "描述你的初步想法。我们将帮助你拨开迷雾，理清思路。",
+    "placeholder": "在此输入...",
+    "enterHint": "按 Enter 澄清",
+    "quickStart": "快速开始：",
+    "recentSessions": "最近会话",
+    "archive": "存档",
+    "viewLibrary": "查看库",
+    "newSession": "开启新会话",
+    "methodology": "分析方法论",
+    "insightsExtracted": "已提取 {{count}} 个见解",
+    "briefingReady": "结构化简报已就绪",
+    "blockersFound": "已识别 {{count}} 个阻碍因素",
+    "hoursAgo": "小时前",
+    "yesterday": "昨天"
+  },
+  "clarify": {
+    "entropyProcess": "减熵过程",
+    "stage": "阶段",
+    "currentDefinition": "当前问题定义",
+    "modifiedFrom": "修改自原始输入",
+    "clarityScore": "清晰度评分",
+    "missingAudit": "缺失项审计",
+    "mainGoal": "主要目标",
+    "constraints": "约束条件",
+    "outputSpec": "目标输出规格",
+    "identified": "已识别",
+    "missing": "缺失",
+    "undefined": "未定义",
+    "keyStep": "关键步骤",
+    "confirmChoice": "确认选择",
+    "useAssumption": "直接使用假设",
+    "phase": "问题澄清"
+  },
+  "spec": {
+    "verified": "已验证",
+    "problemDefined": "问题已定义",
+    "specSubtitle": "您的需求已合成为一个针对推理模型优化的提示词规范。",
+    "idealSpec": "理想规格",
+    "finalSpec": "最终规范",
+    "copyToClipboard": "复制到剪贴板",
+    "structuredBreakdown": "结构化拆解",
+    "coreGoal": "核心目标",
+    "constraintsBoundary": "约束与边界情况",
+    "techOutput": "技术输出规范",
+    "downstreamRoute": "下游路由",
+    "recommendedModel": "推荐推理模型",
+    "alternativePath": "备选路径",
+    "expertTip": "专家提示",
+    "exportFigma": "导出为 Figma/JSON",
+    "redefine": "重新定义"
+  },
+  "library": {
+    "title": "问题库",
+    "searchPlaceholder": "搜索历史记录...",
+    "filterAll": "全部",
+    "filterDraft": "草稿",
+    "filterCompleted": "已完成",
+    "filterStarred": "星标",
+    "clarityScore": "清晰度得分",
+    "inProgress": "进行中",
+    "buildKnowledge": "建立您的知识库",
+    "buildKnowledgeDesc": "选择一个条目以查看完整的澄清线程、共享见解和逻辑图。",
+    "libraryInsights": "库洞察",
+    "avgImproved": "您的平均清晰度得分在过去30天内提高了",
+    "mostActive": "最活跃领域",
+    "newSession": "新会话"
   },
   "settings": {
     "title": "设置",
-    "language": {
-      "title": "语言",
-      "description": "选择应用显示语言",
-      "zh": "中文",
-      "en": "English"
-    },
-    "about": {
-      "title": "关于",
-      "version": "版本 1.0.0"
-    }
+    "subtitle": "System Preferences & Account Control",
+    "preferences": "偏好设置",
+    "language": "语言",
+    "languageDesc": "System localization",
+    "appearance": "外观",
+    "appearanceDesc": "跟随系统设置",
+    "account": "账户",
+    "editProfile": "编辑个人资料",
+    "securityPassword": "安全与密码",
+    "about": "关于",
+    "version": "版本",
+    "terms": "服务条款",
+    "signOut": "退出登录",
+    "newSession": "New Session",
+    "tagline": "Analytical Intelligence for Complex Systems"
+  },
+  "categories": {
+    "research": "研究",
+    "coding": "编程",
+    "strategy": "策略",
+    "writing": "写作",
+    "strategic": "战略"
+  },
+  "outputFormats": {
+    "prompt": "可执行提示词",
+    "analysis": "决策分析",
+    "spec": "结构化规格",
+    "summary": "执行摘要"
   }
 }

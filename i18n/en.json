@@ -1,40 +1,109 @@
 {
-  "appName": "Todo List",
+  "appName": "Clearer",
   "tabs": {
-    "todo": "Todos",
+    "input": "Input",
+    "library": "Library",
     "settings": "Settings"
   },
-  "todo": {
-    "placeholder": "Add a new task...",
-    "add": "Add",
-    "empty": "No tasks yet, add one!",
-    "emptyFiltered": "No matching tasks",
-    "filter": {
-      "all": "All",
-      "active": "Active",
-      "completed": "Completed"
-    },
-    "count": {
-      "left": "{{count}} item left",
-      "left_plural": "{{count}} items left"
-    },
-    "clearCompleted": "Clear completed",
-    "completed": "Completed",
-    "markComplete": "Mark complete",
-    "markActive": "Mark incomplete",
-    "delete": "Delete"
+  "input": {
+    "title": "What problem should we",
+    "titleHighlight": "define?",
+    "subtitle": "Describe your initial idea. We will help you cut through the fog and clarify your thinking.",
+    "placeholder": "Type here...",
+    "enterHint": "Press Enter to clarify",
+    "quickStart": "Quick start:",
+    "recentSessions": "Recent Sessions",
+    "archive": "Archive",
+    "viewLibrary": "View Library",
+    "newSession": "New Session",
+    "methodology": "Analysis Methodology",
+    "insightsExtracted": "{{count}} insights extracted",
+    "briefingReady": "Structured briefing ready",
+    "blockersFound": "{{count}} blockers identified",
+    "hoursAgo": "hours ago",
+    "yesterday": "Yesterday"
+  },
+  "clarify": {
+    "entropyProcess": "Entropy Reduction",
+    "stage": "Stage",
+    "currentDefinition": "Current Problem Definition",
+    "modifiedFrom": "Modified from original input",
+    "clarityScore": "Clarity Score",
+    "missingAudit": "Missing Components Audit",
+    "mainGoal": "Primary Goal",
+    "constraints": "Constraints",
+    "outputSpec": "Target Output Spec",
+    "identified": "Identified",
+    "missing": "Missing",
+    "undefined": "Undefined",
+    "keyStep": "Key Step",
+    "confirmChoice": "Confirm Selection",
+    "useAssumption": "Use Assumption Directly",
+    "phase": "Problem Clarification"
+  },
+  "spec": {
+    "verified": "Verified",
+    "problemDefined": "Problem Defined",
+    "specSubtitle": "Your requirements have been synthesized into a prompt specification optimized for reasoning models.",
+    "idealSpec": "Ideal Spec",
+    "finalSpec": "Final Specification",
+    "copyToClipboard": "Copy to Clipboard",
+    "structuredBreakdown": "Structured Breakdown",
+    "coreGoal": "Core Goal",
+    "constraintsBoundary": "Constraints & Edge Cases",
+    "techOutput": "Technical Output Spec",
+    "downstreamRoute": "Downstream Route",
+    "recommendedModel": "Recommended reasoning model",
+    "alternativePath": "Alternative path",
+    "expertTip": "Expert Tip",
+    "exportFigma": "Export as Figma/JSON",
+    "redefine": "Redefine"
+  },
+  "library": {
+    "title": "Problem Library",
+    "searchPlaceholder": "Search history...",
+    "filterAll": "All",
+    "filterDraft": "Draft",
+    "filterCompleted": "Completed",
+    "filterStarred": "Starred",
+    "clarityScore": "Clarity Score",
+    "inProgress": "In Progress",
+    "buildKnowledge": "Build Your Knowledge Base",
+    "buildKnowledgeDesc": "Select an entry to view the full clarification thread, shared insights, and logic graphs.",
+    "libraryInsights": "Library Insights",
+    "avgImproved": "Your average clarity score improved by",
+    "mostActive": "Most Active Area",
+    "newSession": "New Session"
   },
   "settings": {
     "title": "Settings",
-    "language": {
-      "title": "Language",
-      "description": "Choose app display language",
-      "zh": "中文",
-      "en": "English"
-    },
-    "about": {
-      "title": "About",
-      "version": "Version 1.0.0"
-    }
+    "subtitle": "System Preferences & Account Control",
+    "preferences": "Preferences",
+    "language": "Language",
+    "languageDesc": "System localization",
+    "appearance": "Appearance",
+    "appearanceDesc": "Follow system settings",
+    "account": "Account",
+    "editProfile": "Edit Profile",
+    "securityPassword": "Security & Password",
+    "about": "About",
+    "version": "Version",
+    "terms": "Terms of Service",
+    "signOut": "Sign Out",
+    "newSession": "New Session",
+    "tagline": "Analytical Intelligence for Complex Systems"
+  },
+  "categories": {
+    "research": "Research",
+    "coding": "Coding",
+    "strategy": "Strategy",
+    "writing": "Writing",
+    "strategic": "Strategic"
+  },
+  "outputFormats": {
+    "prompt": "Actionable Prompt",
+    "analysis": "Decision Analysis",
+    "spec": "Structured Spec",
+    "summary": "Executive Summary"
   }
 }

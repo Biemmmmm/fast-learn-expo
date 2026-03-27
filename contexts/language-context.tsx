@@ -1,10 +1,10 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import type { Language } from '@/types/todo';
+import type { Language } from '@/types/session';
 import zh from '@/i18n/zh.json';
 import en from '@/i18n/en.json';
 
-const LANGUAGE_KEY = '@todo_language';
+const LANGUAGE_KEY = '@clearer_language';
 
 const translations = {
   zh,
