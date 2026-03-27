@@ -295,7 +295,7 @@ const styles = StyleSheet.create({
   },
   scoreBento: {
     padding: 20,
-    borderRadius: 12,
+    borderRadius: 8,
     flexDirection: 'row',
     alignItems: 'center',
     gap: 20,
@@ -323,7 +323,7 @@ const styles = StyleSheet.create({
     borderRadius: 2,
   },
   specCard: {
-    borderRadius: 12,
+    borderRadius: 8,
     overflow: 'hidden',
     marginBottom: 24,
   },
@@ -333,8 +333,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 16,
     paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: 'rgba(255,255,255,0.1)',
     backgroundColor: 'rgba(255,255,255,0.05)',
   },
   terminalDots: {
@@ -404,7 +402,7 @@ const styles = StyleSheet.create({
   },
   modelCard: {
     padding: 20,
-    borderRadius: 12,
+    borderRadius: 8,
     borderWidth: 1,
     marginBottom: 24,
   },
@@ -424,7 +422,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 14,
-    borderRadius: 8,
+    borderRadius: 6,
     borderWidth: 1,
     marginBottom: 8,
   },
@@ -458,7 +456,7 @@ const styles = StyleSheet.create({
   tipBox: {
     marginTop: 24,
     padding: 14,
-    borderRadius: 8,
+    borderRadius: 6,
     borderWidth: 1,
     borderStyle: 'dashed',
   },

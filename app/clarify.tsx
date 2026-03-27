@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
   },
   problemCard: {
     padding: 20,
-    borderRadius: 8,
+    borderRadius: 6,
     borderLeftWidth: 4,
     marginBottom: 24,
   },
@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
   },
   scoreCard: {
     padding: 28,
-    borderRadius: 8,
+    borderRadius: 6,
     alignItems: 'center',
     marginBottom: 24,
   },
@@ -317,8 +317,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     gap: 16,
     padding: 16,
-    borderBottomWidth: 1,
-    borderBottomColor: 'rgba(198,198,198,0.15)',
+    marginBottom: 4,
   },
   statusIcon: {
     width: 20,
@@ -338,7 +337,7 @@ const styles = StyleSheet.create({
     lineHeight: 18,
   },
   followUpCard: {
-    borderRadius: 12,
+    borderRadius: 8,
     padding: 24,
     borderWidth: 1,
   },

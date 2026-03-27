@@ -56,7 +56,7 @@ export function Accordion({ title, children, isHighlighted = false }: AccordionP
 
 const styles = StyleSheet.create({
   container: {
-    borderRadius: 8,
+    borderRadius: 6,
     overflow: 'hidden',
     borderLeftWidth: 4,
     marginBottom: 4,

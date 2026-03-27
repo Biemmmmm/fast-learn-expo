@@ -243,7 +243,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 16,
-    borderRadius: 12,
+    borderRadius: 8,
   },
   settingLeft: {
     flexDirection: 'row',
@@ -280,7 +280,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   accountCard: {
-    borderRadius: 16,
+    borderRadius: 8,
     overflow: 'hidden',
   },
   profileRow: {
@@ -288,8 +288,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 16,
     padding: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: 'rgba(198,198,198,0.15)',
   },
   avatarContainer: {
     position: 'relative',
@@ -358,7 +356,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 16,
-    borderRadius: 12,
+    borderRadius: 8,
   },
   aboutLabel: {
     fontSize: 14,
@@ -376,8 +374,6 @@ const styles = StyleSheet.create({
     marginTop: 48,
     alignItems: 'center',
     paddingTop: 32,
-    borderTopWidth: 1,
-    borderTopColor: 'rgba(198,198,198,0.15)',
   },
   footerLine: {
     width: 48,

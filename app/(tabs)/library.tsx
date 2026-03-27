@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
     gap: 12,
     paddingHorizontal: 16,
     paddingVertical: 14,
-    borderRadius: 12,
+    borderRadius: 8,
   },
   searchInput: {
     flex: 1,
@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   knowledgeCard: {
-    borderRadius: 16,
+    borderRadius: 8,
     padding: 32,
     alignItems: 'center',
   },
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   insightCard: {
-    borderRadius: 16,
+    borderRadius: 8,
     padding: 20,
     borderWidth: 1,
   },
@@ -300,7 +300,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
   },
   activeAreaCard: {
-    borderRadius: 16,
+    borderRadius: 8,
     padding: 20,
   },
   activeAreaTitle: {

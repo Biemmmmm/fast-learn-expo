@@ -102,7 +102,7 @@ function getTimeAgo(timestamp: number): string {
 
 const styles = StyleSheet.create({
   card: {
-    borderRadius: 12,
+    borderRadius: 8,
     padding: 20,
   },
   cardInner: {
@@ -157,8 +157,6 @@ const styles = StyleSheet.create({
     gap: 8,
     marginTop: 16,
     paddingTop: 12,
-    borderTopWidth: 1,
-    borderTopColor: 'rgba(198,198,198,0.15)',
   },
   footerText: {
     fontSize: 12,

@@ -238,7 +238,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   inputContainer: {
-    borderRadius: 12,
+    borderRadius: 8,
     borderWidth: 0,
     position: 'relative',
   },
@@ -288,7 +288,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   methodologyCard: {
-    borderRadius: 12,
+    borderRadius: 8,
     padding: 24,
     marginBottom: 32,
   },
@@ -333,8 +333,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'flex-end',
     paddingBottom: 12,
-    borderBottomWidth: 1,
-    borderBottomColor: 'rgba(198,198,198,0.2)',
+    marginBottom: 4,
   },
   archiveLabel: {
     fontSize: 10,
